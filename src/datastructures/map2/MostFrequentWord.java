@@ -28,7 +28,7 @@ public class MostFrequentWord {
     }
 
     public static void main(String[] args) {
-        String sentence = "But then they were married (she felt awful about being pregnant before but\n" +
+        String sentence = "But then they were married she felt awful about being pregnant before but\n" +
                 "Harry had been talking about marriage for a while and anyway laughed when\n" +
                 "she told him in early February about missing her period and said Great she\n" +
                 "was terribly frightened and he said Great and lifted her put his arms around\n" +

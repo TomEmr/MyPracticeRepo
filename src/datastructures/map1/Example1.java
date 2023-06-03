@@ -29,7 +29,7 @@ public class Example1 {
     }
 
     public static void main(String[] args) {
-        String test = "This is really very very nice sentence, it is really good for practice!";
+        String test = "This is really very very very nice sentence, it is really good for practice!";
         System.out.println(wordOccurrncies(test, 2));
     }
 }

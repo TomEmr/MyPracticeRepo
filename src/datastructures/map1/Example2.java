@@ -14,7 +14,7 @@ public class Example2 {
         try {
             sentence = Files.readString(inputPath);
         } catch (IOException e) {
-            throw new RuntimeException("Error: Can not manipulate file - original error message: <Cannot read file>");
+            throw new RuntimeException("Error: Can't manipulate file - original error message: <Cannot read file>");
         }
         String alphaAndDigits = sentence.replaceAll("[^a-zA-Z0-9\\s]","");
         String[] words = alphaAndDigits.split(" ");

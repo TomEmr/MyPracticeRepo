@@ -23,7 +23,7 @@ public class FirstFunction {
         try {
             lines = Files.readAllLines(Path.of(regionName));
         } catch (IOException e) {
-            throw new FileNotFoundException("Cannot find sales data for" + regionName + ", please try again.");
+            throw new FileNotFoundException("Can't find sales data for" + regionName + ", please try again.");
         }
         for (int i = 1; i < lines.size(); i++) {
             String[] line = lines.get(i).split(",");
