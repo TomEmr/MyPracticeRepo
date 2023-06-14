@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <style>
+        .coolio{
+            display: block;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<div class="coolio">
+    <h2>Create a Note</h2>
+    <form>
+        <label> Title </label><br>
+        <input type="text" name="title"><br>
+
+        <label> Content</label> <br>
+        <input type="text" name="content"><br>
+
+        <label>Type</label><br>
+        <select name="type">
+            <option name="type" value="shopping list">Shopping list</option>
+            <option name="type" value="reminder">Reminder</option>
+            <option name="type" value="motivational">Motivational</option>
+        </select> <br>
+        <input type="submit" value="save">
+    </form>
+</div>
+<script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        console.log(data);
+
+        fetch("/api/notes", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (response.ok){
+                form.reset();
+                alert("New note was saved.")
+                return response.json();
+            }
+        })
+    })
+</script>
+
+</body>
+</html>

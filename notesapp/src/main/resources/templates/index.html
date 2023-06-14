@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+<header>
+    <button id="all">All</button>
+    <button id="shopping">Shopping List</button>
+    <button id="reminder">Reminder</button>
+    <button id="motivational">Motivational</button>
+</header>
+<main>
+
+</main>
+<script>
+
+    const main = document.querySelector('main');
+    const all = document.querySelector('#all');
+    const shoppingList = document.querySelector('#shopping');
+    const reminder = document.querySelector('#reminder');
+    const motivational = document.querySelector('#motivational');
+
+
+    async function listNotes(type) {
+
+        let url = '/api/notes';
+        if (type) {
+            url += `?type=${type}`;
+        }
+        await fetch(url)
+            .then(response => response.json())
+            .then(notes => {
+                main.innerText = '';
+                notes.forEach(note => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+
+                    const title = document.createElement('h3');
+                    title.innerText = note.title;
+
+                    const content = document.createElement('p');
+                    content.innerText = note.content;
+
+                    const remove = document.createElement('button');
+                    remove.textContent = 'Remove';
+
+                    remove.addEventListener('click', () => {
+                        fetch('/api/notes/' + note.id, {
+                            method: 'DELETE'
+                        })
+                            .then(response => {
+                                if (response.ok) {
+                                    card.remove();
+                                }
+                            })
+                    })
+                    card.appendChild(title);
+                    card.appendChild(content);
+                    card.appendChild(remove);
+                    main.appendChild(card);
+
+                })
+            })
+    }
+
+    all.addEventListener('click', () => listNotes());
+    shoppingList.addEventListener('click', () => listNotes('shopping list'));
+    reminder.addEventListener('click', () => listNotes('reminder'));
+    motivational.addEventListener('click', () => listNotes('motivational'));
+
+    listNotes();
+
+</script>
+</body>
+</html>
