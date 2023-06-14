@@ -25,8 +25,8 @@ public class NoteService {
     public Note save(Note note){
         return noteRepo.save(note);
     }
-    public List<Note> listAllByType(String alias){
-        return noteRepo.findAllByType(alias);
+    public List<Note> listAllByType(String type){
+        return noteRepo.findAllByType(type);
     }
 
     public Optional<Note> findById(Long id){
