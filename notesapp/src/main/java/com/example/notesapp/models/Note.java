@@ -19,13 +19,6 @@ public class Note {
     public Note() {
     }
 
-    public Note(Long id, String title, String content, String type) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.type = type;
-    }
-
     public Note(Note note) {
     }
 

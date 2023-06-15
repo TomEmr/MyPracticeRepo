@@ -33,6 +33,15 @@ public class NoteService {
         return noteRepo.findById(id);
     }
 
+//    podle Lukyho
+//    delete by měl vracet Optional<Note> a měl bych ověřit podle ID
+//    public Optional<Note> delete(Long id){
+//        Optional<Note> optional = noteRepo.findById(id);
+//        if (optional.isPresent()){
+//            noteRepo.deleteById(id);
+//        }
+//        return optional;
+//    }
     public void delete(Long id){
         noteRepo.deleteById(id);
     }

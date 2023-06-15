@@ -2,7 +2,7 @@ package com.example.notesapp.controllers;
 
 import com.example.notesapp.models.dtos.DeleteResponseDTO;
 import com.example.notesapp.models.dtos.ErrorDTO;
-import com.example.notesapp.models.dtos.GetAllNotesDTO;
+import com.example.notesapp.models.dtos.GetAllWithoutTypeDTO;
 import com.example.notesapp.models.Note;
 import com.example.notesapp.models.dtos.GetByTypeDTO;
 import com.example.notesapp.services.NoteService;
@@ -10,13 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
 public class ApiController {
+
+    private List<String> types = List.of("shopping list", "reminder", "motivational");
 
     private final NoteService noteService;
 
@@ -31,27 +32,27 @@ public class ApiController {
         return ResponseEntity
                 .ok()
                 .body(note);
+//        OR return ResponseEntity.ok(noteService.save(note) - kratší a víc cool
     }
 
     @GetMapping("/notes")
     public ResponseEntity<?> listByType(@RequestParam Optional<String> type) {
+//        nejdřív ověřit, když je present -> není v listu types - new ErrorDTO nebo tam je noteService.listAllByType atd
+//        až potom že tam není - listuju všechny bez typu
         if (type.isEmpty()) {
             return ResponseEntity
                     .ok()
-                    .body(noteService.listAll().stream().map(GetAllNotesDTO::new).toList());
+                    .body(noteService.listAll().stream().map(GetAllWithoutTypeDTO::new).toList());
         }
-        List<String> types = Arrays.asList("shopping list", "reminder", "motivational");
+
         if (!types.contains(type.get())) {
             return ResponseEntity
                     .status(400)
                     .body(new ErrorDTO(type.get() + " type is not existing!"));
-        } else
-            return ResponseEntity
-                    .ok()
-                    .body(noteService.listAllByType(type.get())
-                            .stream()
-                            .map(GetByTypeDTO::new)
-                            .toList());
+        }
+        return ResponseEntity
+                .ok()
+                .body(noteService.listAllByType(type.get()));
     }
 
     @DeleteMapping("/notes/{id}")
@@ -67,7 +68,7 @@ public class ApiController {
             noteService.delete(id);
             return ResponseEntity
                     .status(200)
-                    .body(new DeleteResponseDTO(optional.get().getContent()));
+                    .body(new DeleteResponseDTO(optional.get()));
         } else noteService.delete(id);
         return ResponseEntity
                 .status(204)

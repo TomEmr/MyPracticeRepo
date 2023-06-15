@@ -2,13 +2,13 @@ package com.example.notesapp.models.dtos;
 
 import com.example.notesapp.models.Note;
 
-public class GetAllNotesDTO {
+public class GetAllWithoutTypeDTO {
 
     private Long id;
     private String title;
     private String content;
 
-    public GetAllNotesDTO(Note note) {
+    public GetAllWithoutTypeDTO(Note note) {
         this.id = note.getId();
         this.title = note.getTitle();
         this.content = note.getContent();
