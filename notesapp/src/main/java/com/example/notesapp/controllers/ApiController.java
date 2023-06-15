@@ -25,12 +25,6 @@ public class ApiController {
         this.noteService = noteService;
     }
 
-//dát get do jednoho endpointu
-//    @GetMapping("/notes")
-//    public ResponseEntity<?> listAll() {
-// return null;
-//    }
-
     @PostMapping("/notes")
     public ResponseEntity<?> saveNote(@RequestBody Note note) {
         noteService.save(note);
