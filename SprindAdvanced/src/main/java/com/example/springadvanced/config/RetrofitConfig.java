@@ -1,4 +1,4 @@
-package com.example.springadvanced.services;
+package com.example.springadvanced.config;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

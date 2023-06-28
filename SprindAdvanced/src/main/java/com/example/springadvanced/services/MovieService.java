@@ -1,5 +1,6 @@
 package com.example.springadvanced.services;
 
+import com.example.springadvanced.config.RetrofitConfig;
 import com.example.springadvanced.models.Movie;
 import com.example.springadvanced.models.MovieDTO;
 import com.example.springadvanced.repositories.MovieRepository;
