@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.io.IOException;
-import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -23,10 +22,5 @@ public class RestController {
     public Movie getMovieById(@PathVariable("id") int movieId) throws IOException {
         return movieService.getMovieById(movieId);
     }
-
-//    @GetMapping("movies")
-//    public List<Movie> getAllMovies(){
-//        return movieService.getAllMovies();
-//    }
 
 }

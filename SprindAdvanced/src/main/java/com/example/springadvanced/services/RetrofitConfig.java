@@ -10,7 +10,7 @@ public class RetrofitConfig {
     private static String BASE_URL = "https://swapi.dev/api/";
 
     public static Retrofit getRetrofit() {
-        if (retrofit == null){
+        if (retrofit == null) {
             return new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
