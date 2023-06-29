@@ -13,10 +13,10 @@ public class UserDto {
 
     private Long id;
 
-    @NotEmpty
+    @NotEmpty(message = "First name is required")
     private String firstName;
 
-    @NotEmpty
+    @NotEmpty(message = "Last name is required")
     private String lastName;
 
     @NotEmpty(message = "Email is required")
