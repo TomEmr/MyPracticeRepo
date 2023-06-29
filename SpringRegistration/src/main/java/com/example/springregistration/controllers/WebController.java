@@ -25,6 +25,11 @@ public class WebController {
         return "index";
     }
 
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
     @GetMapping("/register")
     public String registrationForm(Model model) {
         UserDto user = new UserDto();
@@ -49,11 +54,6 @@ public class WebController {
 
         userService.saveUser(userDto);
         return "redirect:/register?success";
-    }
-
-    @GetMapping("/login")
-    public String login() {
-        return "login";
     }
 
     @GetMapping("/users")
