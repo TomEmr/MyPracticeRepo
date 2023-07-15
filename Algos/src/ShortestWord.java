@@ -14,6 +14,7 @@ public class ShortestWord {
 
         }
 
+//        když hledám minimum, na začátku int min = Integer.MAX_VALUE; pak je to easy
         public static int dummySolution(String s){
             String[] arr = s.split(" ");
             int min = Integer.MAX_VALUE;
@@ -24,7 +25,7 @@ public class ShortestWord {
             }
             return min;
         }
-
+//klasika cool stream řešení no
         public static int coolSolution(String s){
             return Arrays.stream(s.split(" "))
                     .mapToInt(String::length)
