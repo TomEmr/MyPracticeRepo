@@ -16,7 +16,8 @@ import java.util.function.Function;
 @Service
 public class JwtService {
     //tohle by melo byt v application.properties
-    private static final String SIGNING_KEY = "9f06314cc1555e501ae54fd631bfde721d6c7895";
+//    nechceme to na github
+    private static final String SIGNING_KEY = "sQI6f6T8xcZ4UPmT7Uk3BxRxI29gtWR2JKbHrkjhasASDJKHA521asdas5415";
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -40,6 +41,19 @@ public class JwtService {
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
+    }
+
+    public boolean isTokenValid(String token, UserDetails userDetails) {
+        final String username = extractUsername(token);
+        return username.equals(userDetails.getUsername()) && !isTokenExpired(token);
+    }
+
+    private boolean isTokenExpired(String token) {
+        return extractExpiration(token).before(new Date());
+    }
+
+    private Date extractExpiration(String token) {
+        return extractClaim(token, Claims::getExpiration);
     }
 
     private Claims extractAllClaims(String token) {
