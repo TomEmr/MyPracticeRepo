@@ -1,7 +1,6 @@
 public class CountTheDivisors {
 
     public static void main(String[] args) {
-
         CountTheDivisors countTheDivisors = new CountTheDivisors();
         System.out.println(countTheDivisors.numberOfDivisors(4));
         System.out.println(countTheDivisors.numberOfDivisors(5));
