@@ -2,29 +2,21 @@ public class FindTheOddInt {
 
     public static void main(String[] args) {
 
-        System.out.println(findIt(new int[]{1,1,2,-2,5,2,4,4,-1,-2,5}));
-        System.out.println(findIt(new int[]{20,1,1,2,2,3,3,5,5,4,20,4,5}));
-        System.out.println(findIt(new int[]{10}));
-        System.out.println(findIt(new int[]{1,1,1,1,1,1,10,1,1,1,1}));
-        System.out.println(findIt(new int[]{5,4,3,2,1,5,4,3,2,10,10}));
-
+        System.out.println(findIt(new int[]{1, 1, 2, 2, 3, 3, 3, 4, 4}));
     }
 
     public static int findIt(int[] a) {
-//        to co budu vracet
         int odd = 0;
-//        projdu všechny prvky pole a porovnám je s každým prvkem pole
-        for (int k : a) {
+        for (int i = 0; i < a.length; i++) {
             int count = 0;
-//            pokud se rovnají, tak zvýším count o 1
-            for (int i : a) {
-                if (k == i) {
+            int number = a[i];
+            for (int j = 0; j < a.length; j++) {
+                if (number == a[j]) {
                     count++;
                 }
             }
-//            pokud je count lichý, tak je to číslo, které hledám
             if (count % 2 != 0) {
-                odd = k;
+                odd = number;
             }
         }
         return odd;
