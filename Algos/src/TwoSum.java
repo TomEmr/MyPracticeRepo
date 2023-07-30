@@ -1,6 +1,11 @@
+import java.util.Arrays;
+
 public class TwoSum {
     public static void main(String[] args) {
 
+        int[] numbers = {1, 2, 3};
+        int target = 4;
+        System.out.println(Arrays.toString(twoSum(numbers, target)));
     }
 
     public static int[] twoSum(int[] numbers, int target) {
