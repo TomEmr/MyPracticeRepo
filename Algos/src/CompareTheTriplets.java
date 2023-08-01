@@ -6,9 +6,6 @@ public class CompareTheTriplets {
 
         System.out.println(Arrays.toString(compareTheTriplets(new int[]{1, 2, 3}, new int[]{3, 2, 1})));
         System.out.println(Arrays.toString(compareTheTriplets(new int[]{17, 28, 30}, new int[]{99, 16, 8})));
-        System.out.println("----------------");
-        System.out.println(Arrays.toString(switchSolution(new int[]{1, 2, 3}, new int[]{3, 2, 1})));
-        System.out.println(Arrays.toString(switchSolution(new int[]{17, 28, 30}, new int[]{99, 16, 8})));
 
     }
 
@@ -25,17 +22,6 @@ public class CompareTheTriplets {
         }
         result[0] = alicePoint;
         result[1] = bobPoint;
-        return result;
-    }
-
-    public static int[] switchSolution(int[] a, int[] b) {
-        int[] result = new int[2];
-        for (int i = 0; i < a.length; i++) {
-            switch (Integer.compare(a[i], b[i])) {
-                case 1 -> result[0]++;
-                case -1 -> result[1]++;
-            }
-        }
         return result;
     }
 }
