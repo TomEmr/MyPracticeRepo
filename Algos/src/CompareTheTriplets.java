@@ -32,12 +32,8 @@ public class CompareTheTriplets {
         int[] result = new int[2];
         for (int i = 0; i < a.length; i++) {
             switch (Integer.compare(a[i], b[i])) {
-                case 1:
-                    result[0]++;
-                    break;
-                case -1:
-                    result[1]++;
-                    break;
+                case 1 -> result[0]++;
+                case -1 -> result[1]++;
             }
         }
         return result;
