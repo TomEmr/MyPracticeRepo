@@ -34,4 +34,3 @@ public class MatrixTranspose {
 //        | 3 6 |
 //        The input to your function will be an array of matrix rows. You can assume that each row has the same length, and that the height and width of the matrix are both positive.
 //
-
