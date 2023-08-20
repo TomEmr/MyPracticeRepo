@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DuplicatesMap {
 
@@ -21,6 +18,8 @@ public class DuplicatesMap {
         obj.put(2, list2);
 
         System.out.println(removeDuplicateIds(obj));
+        System.out.println("-----------------");
+        System.out.println(betterSolution(obj));
     }
 
     public static Map<Integer, List<String>> removeDuplicateIds(Map<Integer, List<String>> obj) {
@@ -55,6 +54,25 @@ public class DuplicatesMap {
             result.put(key, uniqueValues);
         }
         return result;
+    }
+    public static Map<Integer, List<String>> betterSolution(Map<Integer, List<String>> obj) {
+        Map<Integer, List<String>> map = new HashMap<>();
+        Set<String> seen = new HashSet<>();
+        List<Integer> sortedKeys = new ArrayList<>(obj.keySet());
+        sortedKeys.sort(Collections.reverseOrder());
+
+        for (int key : sortedKeys) {
+            List<String> chars = obj.get(key);
+            List<String> newChars = new ArrayList<>();
+            for (String ch : chars) {
+                if (!seen.contains(ch)) {
+                    seen.add(ch);
+                    newChars.add(ch);
+                }
+            }
+            map.put(key, newChars);
+        }
+        return map;
     }
 }
 
