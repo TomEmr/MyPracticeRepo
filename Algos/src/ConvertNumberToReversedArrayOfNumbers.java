@@ -10,6 +10,7 @@ public class ConvertNumberToReversedArrayOfNumbers {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(dummySolution(35231)));
+        System.out.println(Arrays.toString(dummySolution2(35231)));
         System.out.println(Arrays.toString(coolStringBuilderSolution(35231)));
     }
 //    1. převedu číslo na string
@@ -21,6 +22,16 @@ public class ConvertNumberToReversedArrayOfNumbers {
         int[] result = new int[number.length()];
         for (int i = 0; i < number.length(); i++) {
             result[i] = Integer.parseInt(String.valueOf(number.charAt(number.length() - 1 - i)));
+        }
+        return result;
+    }
+
+    public static int[] dummySolution2(int n) {
+        String number = String.valueOf(n);
+        String[] split = number.split("");
+        int[] result = new int[number.length()];
+        for (int i = 0; i < split.length; i++) {
+            result[i] = Integer.parseInt(split[split.length - 1 - i]);
         }
         return result;
     }
