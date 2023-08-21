@@ -4,20 +4,20 @@ public class FindTheOddInt {
     public static void main(String[] args) {
 
         System.out.println(findIt(new int[]{1, 1, 2, 2, 3, 3, 3, 4, 4}));
+        System.out.println(findItMap(new int[]{1, 1, 2, 2, 3, 3, 3, 4, 4}));
     }
 
     public static int findIt(int[] a) {
         int odd = 0;
         for (int i = 0; i < a.length; i++) {
             int count = 0;
-            int number = a[i];
             for (int j = 0; j < a.length; j++) {
-                if (number == a[j]) {
+                if (a[i] == a[j]) {
                     count++;
                 }
             }
             if (count % 2 != 0) {
-                odd = number;
+                odd = a[i];
             }
         }
         return odd;
@@ -29,6 +29,11 @@ public class FindTheOddInt {
         for (int i : a) {
             map.put (i, map.getOrDefault(i, 0) + 1);
         }
+//        for (int i : a) {
+//            if (map.get(i) % 2 != 0) {
+//                hop = i;
+//            }
+//        }
 
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() % 2 != 0){

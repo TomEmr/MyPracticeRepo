@@ -13,9 +13,8 @@ public class JadenCasingStrings {
         if (phrase == null || phrase.isEmpty()){
             return null;
         }
-        String[] arr = phrase.split(" ");
         StringBuilder sb = new StringBuilder();
-        for (String s : arr) {
+        for (String s : phrase.split(" ")) {
             sb.append(s.substring(0, 1).toUpperCase()).append(s.substring(1)).append(" ");
         }
         return sb.toString().trim();

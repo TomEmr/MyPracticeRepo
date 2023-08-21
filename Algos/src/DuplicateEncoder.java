@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class DuplicateEncoder {
 
     public static void main(String[] args) {
@@ -6,6 +9,8 @@ public class DuplicateEncoder {
         System.out.println(encode("recede"));
         System.out.println(encode("Success"));
         System.out.println(encode("(( @"));
+        System.out.println(encodeMap("din"));
+        System.out.println(encodeMap("recede"));
     }
 
     public static String encode(String word) {
@@ -19,6 +24,23 @@ public class DuplicateEncoder {
                 }
             }
             if (count == 1) {
+                result.append("(");
+            } else {
+                result.append(")");
+            }
+        }
+        return result.toString();
+    }
+
+    public static String encodeMap(String word) {
+        StringBuilder result = new StringBuilder();
+        word = word.toLowerCase();
+        Map<Character, Integer> map = new HashMap<>();
+        for (char c : word.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+        for (char c : word.toCharArray()) {
+            if (map.get(c) == 1) {
                 result.append("(");
             } else {
                 result.append(")");

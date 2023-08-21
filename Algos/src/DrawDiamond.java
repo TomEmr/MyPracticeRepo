@@ -2,6 +2,7 @@ public class DrawDiamond {
 
     public static void main(String[] args) {
         draw(5);
+        System.out.println(draw2(5));
     }
 
     public static void draw(int size) {
@@ -23,6 +24,26 @@ public class DrawDiamond {
             }
             System.out.println();
         }
+    }
+
+    public static String draw2(int n) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i; j++)
+                sb.append(" ");
+            for (int j = 0; j < i * 2 + 1; j++)
+                sb.append("*");
+            sb.append("\n");
+        }
+        for (int i = n - 2; i >= 0; i--) {
+            for (int j = 0; j < n - i; j++)
+                sb.append(" ");
+            for (int j = 0; j < i * 2 + 1; j++)
+                sb.append("*");
+            sb.append("\n");
+        }
+
+        return sb.toString();
     }
 
 //    public static String print(int n) {
