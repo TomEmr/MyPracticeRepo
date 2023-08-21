@@ -1,3 +1,4 @@
+import java.util.*;
 public class FindTheOddInt {
 
     public static void main(String[] args) {
@@ -21,6 +22,22 @@ public class FindTheOddInt {
         }
         return odd;
     }
+
+    public static int findItMap(int[] a) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int hop = 0;
+        for (int i : a) {
+            map.put (i, map.getOrDefault(i, 0) + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() % 2 != 0){
+                hop = entry.getKey();
+            }
+        }
+        return hop;
+    }
+
 }
 
 //    Given an array of integers, find the one that appears an odd number of times.
