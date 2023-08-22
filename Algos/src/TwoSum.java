@@ -3,22 +3,17 @@ import java.util.Arrays;
 public class TwoSum {
     public static void main(String[] args) {
 
-        int[] numbers = {1, 2, 3};
-        int target = 4;
-        System.out.println(Arrays.toString(twoSum(numbers, target)));
+        System.out.println(Arrays.toString(twoSum(new int[]{1, 2, 3}, 4)));
     }
 
     public static int[] twoSum(int[] numbers, int target) {
         int[] result = new int[2];
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 1; j < numbers.length; j++) {
-                if (i != j) {
-                    if (numbers[i] + numbers[j] == target) {
+                if (i != j && numbers[i] + numbers[j] == target) {
                         result[0] = i;
                         result[1] = j;
-                    }
                 }
-
             }
         }
         return result;

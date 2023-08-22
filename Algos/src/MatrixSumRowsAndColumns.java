@@ -18,15 +18,15 @@ public class MatrixSumRowsAndColumns {
             int sumRow = 0;
             for (int j = 0; j < columns; j++ ) {
                 sumRow += matrix[i][j];
-                result[0][i] = sumRow;
             }
+            result[0][i] = sumRow;
         }
         for (int i = 0; i < columns; i++) {
             int sumColumn = 0;
             for (int j = 0; j < rows; j++) {
                 sumColumn += matrix[j][i];
-                result[1][i] = sumColumn;
             }
+            result[1][i] = sumColumn;
         }
         return result;
     }
