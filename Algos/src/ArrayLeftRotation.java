@@ -7,6 +7,23 @@ public class ArrayLeftRotation {
         int[] a = {1, 2, 3, 4, 5};
         int d = 4;
         System.out.println(Arrays.toString(rotLeft(a, d)));
+        System.out.println(Arrays.toString(rotate(a, d)));
+    }
+
+    public static int[] rotate(int[] arr, int d){
+        int[] res = new int[arr.length];
+        int index = 0;
+
+        for (int i = d; i < arr.length; i++) {
+            res[index] = arr[i];
+            index++;
+        }
+        for (int i = 0; i < d; i++) {
+            res[index] = arr[i];
+            index++;
+        }
+
+        return res;
     }
 
     public static int[] rotLeft(int[] a, int d) {

@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TwoToOne {
 
@@ -6,6 +8,23 @@ public class TwoToOne {
         System.out.println(longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"));
         System.out.println(longest("abcdefghijklmnopqrstuvwxyz", "abcdefghijklmnopqrstuvwxyz"));
         System.out.println(longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
+        System.out.println("-----");
+        System.out.println(longee("xyaabbbccccdefww", "xxxxyyyyabklmopq"));
+        System.out.println(longee("abcdefghijklmnopqrstuvwxyz", "abcdefghijklmnopqrstuvwxyz"));
+        System.out.println(longee("loopingisfunbutdangerous", "lessdangerousthancoding"));
+
+    }
+
+    public static String longee(String s1, String s2) {
+        char[] chars = (s1 + s2).toCharArray();
+        Arrays.sort(chars);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < chars.length; i++) {
+            if (i == 0 || chars[i - 1] != chars[i]) {
+                sb.append(chars[i]);
+            }
+        }
+        return sb.toString();
     }
 
     public static String longest(String s1, String s2) {

@@ -13,7 +13,19 @@ public class ArraySumOfDifferences {
 
     public static void main(String[] args) {
         System.out.println(dummySolution(new int[]{2, 1, 10}));
-        System.out.println(streamSolution(new int[]{2, 1, 10}));
+        System.out.println(sum(new int[]{2, 1, 10}));
+    }
+
+    public static int sum(int[] arr) {
+        int sum = 0;
+        if (arr.length < 2) {
+            return sum;
+        }
+        Arrays.sort(arr);
+        for (int i = arr.length - 1; i > 0; i--) {
+            sum += arr[i] - arr[i - 1];
+        }
+        return sum;
     }
 
 //    podmínka na prázdnou array vrací nulu
@@ -29,16 +41,5 @@ public class ArraySumOfDifferences {
             sum += arr[i] - arr[i-1];
         }
         return sum;
-    }
-//    cool řešení se stremem
-//    bacha na import java.util.Arrays;
-    public static int streamSolution(int[] arr){
-        if (arr.length < 2){
-            return 0;
-        }
-        return Arrays.stream(arr)
-                .sorted()
-                .reduce((a, b) -> b - a)
-                .getAsInt();
     }
 }

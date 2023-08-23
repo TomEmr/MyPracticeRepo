@@ -12,11 +12,22 @@ public class ConvertNumberToReversedArrayOfNumbers {
         System.out.println(Arrays.toString(dummySolution(35231)));
         System.out.println(Arrays.toString(dummySolution2(35231)));
         System.out.println(Arrays.toString(coolStringBuilderSolution(35231)));
+        System.out.println(Arrays.toString(convert(35231)));
     }
 //    1. převedu číslo na string
 //    2. vytvořím si array o délce stringu
 //    3. iteruji přes string a převádím znaky na čísla a ukládám do array
 //    4. vracím array
+
+    public static int[] convert(int n){
+        char[] chars = String.valueOf(n).toCharArray();
+        int[] res = new int[chars.length];
+        for (int i = 0; i < chars.length; i++) {
+            res[i] = Character.getNumericValue(chars[chars.length - 1 - i]);
+        }
+        return res;
+    }
+
     public static int[] dummySolution(int n) {
         String number = String.valueOf(n);
         int[] result = new int[number.length()];

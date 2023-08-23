@@ -26,17 +26,17 @@ public class DrawDiamond {
         }
     }
 
-    public static String draw2(int n) {
+    public static String draw2(int size) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n - i; j++)
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size - i; j++)
                 sb.append(" ");
             for (int j = 0; j < i * 2 + 1; j++)
                 sb.append("*");
             sb.append("\n");
         }
-        for (int i = n - 2; i >= 0; i--) {
-            for (int j = 0; j < n - i; j++)
+        for (int i = size - 2; i >= 0; i--) {
+            for (int j = 0; j < size - i; j++)
                 sb.append(" ");
             for (int j = 0; j < i * 2 + 1; j++)
                 sb.append("*");

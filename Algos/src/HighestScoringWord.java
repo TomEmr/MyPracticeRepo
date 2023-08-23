@@ -3,7 +3,25 @@ public class HighestScoringWord {
     public static void main(String[] args) {
 
         System.out.println(high("The quick brown fox jumps over the lazy dog"));
+        System.out.println(highest("The quick brown fox jumps over the lazy dog"));
 
+    }
+
+    public static String highest(String s) {
+        String result = "";
+        int max = Integer.MIN_VALUE;
+        for (String word : s.split(" ")) {
+            int count = 0;
+            for (int i = 0; i < word.length(); i++) {
+                count += word.charAt(i) - 'a' + 1;
+            }
+            if (count > max) {
+                max = count;
+                result = word;
+            }
+        }
+
+        return result;
     }
 
     public static String high(String s) {

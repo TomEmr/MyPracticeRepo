@@ -11,8 +11,26 @@ public class DuplicateEncoder {
         System.out.println(encode("(( @"));
         System.out.println(encodeMap("din"));
         System.out.println(encodeMap("recede"));
+        System.out.println(code("recede"));
     }
 
+
+    public static String code(String s) {
+        s = s.toLowerCase();
+        Map<Character, Integer> map = new HashMap<>();
+        StringBuilder sb = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+        for (char c : s.toCharArray()) {
+            if (map.get(c) == 1) {
+                sb.append('(');
+            } else {
+                sb.append(')');
+            }
+        }
+        return sb.toString();
+    }
     public static String encode(String word) {
         StringBuilder result = new StringBuilder();
         word = word.toLowerCase();

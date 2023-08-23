@@ -9,8 +9,22 @@ public class Mumbling {
 
     public static void main(String[] args) {
         System.out.println(dummySolution("abcd"));
+        System.out.println(mumbling("abcd"));
     }
 
+
+    public static String mumbling(String s){
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            sb.append(Character.toUpperCase(c));
+            for (int j = 0; j < i; j++){
+                sb.append(Character.toLowerCase(c));
+            }
+            sb.append("-");
+        }
+        return sb.deleteCharAt(sb.length()- 1).toString();
+    }
     public static String dummySolution(String s) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {

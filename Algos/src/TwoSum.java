@@ -4,6 +4,19 @@ public class TwoSum {
     public static void main(String[] args) {
 
         System.out.println(Arrays.toString(twoSum(new int[]{1, 2, 3}, 4)));
+        System.out.println(Arrays.toString(sum(new int[]{1, 2, 3}, 4)));
+    }
+    public static int[] sum(int[] numbers, int target) {
+        int[] result = new int[2];
+        for (int i :numbers) {
+            for (int j : numbers) {
+                if (i != j && i + j == target){
+                    result[0] = i;
+                    result[1] = j;
+                }
+            }
+        }
+        return result;
     }
 
     public static int[] twoSum(int[] numbers, int target) {

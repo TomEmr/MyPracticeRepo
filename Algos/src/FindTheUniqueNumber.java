@@ -6,6 +6,12 @@ public class FindTheUniqueNumber {
 
         System.out.println(findUniq(new double[]{1, 1, 1, 2, 1, 1}));
         System.out.println(findUniq(new double[]{0, 0, 0.55, 0, 0}));
+        System.out.println(find(new double[]{0, 0, 0.55, 0, 0}));
+    }
+
+    public static double find(double[] arr) {
+        Arrays.sort(arr);
+        return arr[0] != arr[1] ? arr[0] : arr[arr.length - 1];
     }
 
     public static double findUniq(double[] arr) {

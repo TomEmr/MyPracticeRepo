@@ -7,6 +7,9 @@ public class TwoStrings {
         System.out.println("copilotSolution");
         System.out.println(copilotSolution("hello", "world"));
         System.out.println(copilotSolution("hi", "world"));
+        System.out.println("hop");
+        System.out.println(hop("hello", "world"));
+        System.out.println(hop("hi", "world"));
     }
 
     public static boolean twoStrings(String a, String b) {
@@ -15,6 +18,15 @@ public class TwoStrings {
                 if (a.charAt(i) == b.charAt(j)) {
                     return true;
                 }
+            }
+        }
+        return false;
+    }
+
+    public static boolean hop(String a, String b) {
+        for (String s : a.split("")){
+            if (b.contains(s)){
+                return true;
             }
         }
         return false;
