@@ -1,9 +1,8 @@
+import Movie from "./components/Movie";
 
 const App = () => {
     return (
-        <div>
-        <h1>App</h1>
-        </div>
+        <Movie />
     )
 }
 export default App;
