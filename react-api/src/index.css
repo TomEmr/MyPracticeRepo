@@ -1,0 +1,36 @@
+/* Basic reset for margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling the entire app container */
+.app-container {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Styling the navigation bar */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+/* Styling the content area */
+.content {
+    padding: 20px;
+    margin-top: 20px;
+}
