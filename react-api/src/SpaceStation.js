@@ -33,7 +33,7 @@ const SpaceStation = () => {
             <p>Latitude: {latitude} </p>
             <p>Longitude: {longitude} </p>
             <br/>
-            <a href={map} target="_blank">Map</a>
+            <a href={map} target="_blank" rel="noreferrer">Map</a>
         </div>
     )
 }
