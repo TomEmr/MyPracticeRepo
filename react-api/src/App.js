@@ -1,9 +1,10 @@
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
-import Fetch from "./Fetch";
-import Home from "./Home";
-import SpaceStation from "./SpaceStation";
-import MultipleReturn from "./Multiple-return";
+import Fetch from "./components/Fetch";
+import Home from "./components/Home";
+import SpaceStation from "./components/SpaceStation";
+import MultipleReturn from "./components/Multiple-return";
 import './index.css';
+import Movie from "./components/Movie";
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
                     <Link to="/fetch">Fetch</Link>
                     <Link to="/space-station">Space Station</Link>
                     <Link to="/multiple-return">Multiple Return</Link>
+                    <Link to="/movie">Movie</Link>
 
                 </nav>
                 <Routes>
@@ -22,6 +24,7 @@ const App = () => {
                     <Route path="/fetch" element={<Fetch/>}/>
                     <Route path="/space-station" element={<SpaceStation/>}/>
                     <Route path="/multiple-return" element={<MultipleReturn/>}/>
+                    <Route path="/movie" element={<Movie/>}/>
 
                 </Routes>
             </Router>
