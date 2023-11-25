@@ -12,7 +12,8 @@ const Movie = () => {
     console.log(movies);
 
     return (
-        <div className="movie">
+        <div className="movie-box">
+            <h1 className="header">Movies</h1>
             <div className="buttons">
                 {categories.map((category, index) => {
                     return (
