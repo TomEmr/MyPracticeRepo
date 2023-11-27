@@ -1,4 +1,4 @@
-import "./movie.css";
+import "../movie_project/movie.css";
 import {useState} from "react";
 import allMovies from "../movie_project/allMovies";
 import categories from "../movie_project/categories";
