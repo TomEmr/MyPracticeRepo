@@ -6,6 +6,7 @@ import MultipleReturn from "./components/Multiple-return";
 import './index.css';
 import Movie from "./components/Movie";
 import FAQ from "./components/FAQ";
+import Slider from "./components/Slider";
 
 const App = () => {
 
@@ -18,6 +19,7 @@ const App = () => {
                     <Link to="/space-station">Space Station</Link>
                     <Link to="/multiple-return">Multiple Return</Link>
                     <Link to="/movie">Movie</Link>
+                    <Link to="/slider">Slider</Link>
                     <Link to="/faq">FAQ</Link>
 
                 </nav>
@@ -27,6 +29,7 @@ const App = () => {
                     <Route path="/space-station" element={<SpaceStation/>}/>
                     <Route path="/multiple-return" element={<MultipleReturn/>}/>
                     <Route path="/movie" element={<Movie/>}/>
+                    <Route path="/slider" element={<Slider/>}/>
                     <Route path="/faq" element={<FAQ/>}/>
 
                 </Routes>
