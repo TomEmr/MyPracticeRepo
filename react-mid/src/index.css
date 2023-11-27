@@ -1,0 +1,44 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #008cba;
+  color: white;
+  padding: 15px 20px; /* Increased padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-right: 30px; /* Increased spacing between items */
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em; /* Increased font size */
+}
+
+.navbar ul li a:hover {
+  color: #ddd;
+}
+
+.home-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.home-container h1 {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.home-container p {
+  color: #666;
+  font-size: 1em;
+}
