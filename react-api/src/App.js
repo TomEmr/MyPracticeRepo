@@ -5,6 +5,7 @@ import SpaceStation from "./components/SpaceStation";
 import MultipleReturn from "./components/Multiple-return";
 import './index.css';
 import Movie from "./components/Movie";
+import FAQ from "./components/FAQ";
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
                     <Link to="/space-station">Space Station</Link>
                     <Link to="/multiple-return">Multiple Return</Link>
                     <Link to="/movie">Movie</Link>
+                    <Link to="/faq">FAQ</Link>
 
                 </nav>
                 <Routes>
@@ -25,6 +27,7 @@ const App = () => {
                     <Route path="/space-station" element={<SpaceStation/>}/>
                     <Route path="/multiple-return" element={<MultipleReturn/>}/>
                     <Route path="/movie" element={<Movie/>}/>
+                    <Route path="/faq" element={<FAQ/>}/>
 
                 </Routes>
             </Router>
