@@ -1,4 +1,10 @@
 /* Navbar Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .navbar {
   background-color: #008cba;
   color: white;
@@ -20,7 +26,7 @@
 .navbar ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1.2em; /* Increased font size */
+  font-size: 1.2em;
 }
 
 .navbar ul li a:hover {
@@ -41,4 +47,48 @@
 .home-container p {
   color: #666;
   font-size: 1em;
+}
+
+.basic-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.basic-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.basic-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.basic-form input[type="text"],
+.basic-form input[type="email"],
+.basic-form input[type="password"] {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.basic-form input[type="submit"] {
+  background-color: #008cba;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.basic-form input[type="submit"]:hover {
+  background-color: #007ba7;
 }
